@@ -1,0 +1,135 @@
+import csv
+import pandas
+import numpy
+
+def main():
+    filename = 'age.csv'
+    
+    df = pandas.read_csv(
+        filename,
+        header=0,
+        sep=',',
+        lineterminator='\n')
+    
+     #ระดับประเทศ
+
+    SHOWT = df.iloc[792:, 5]
+    #SHOWC = df.iloc[848:864, 5]
+    show = SHOWT
+    sum = SHOWT.sum()
+    max = SHOWT.max()
+    min = SHOWT.min()
+    mean = SHOWT.mean()
+    std = SHOWT.std()
+    SD1 = (1*std)
+    SD2 = (2*std)
+    MEAN1SD = mean + SD1
+    MEAN_1SD = mean - SD1
+    MEAN2SD = mean + SD2
+    MEAN_2SD = mean - SD2
+    print('national level')
+    print(show)
+    print('.................................')
+    print('Sum value : ',sum)
+    print('Maximun value : ',max)  
+    print('minimum value : ',min)
+    print('Mean value : ',mean)
+    print('Standard deviation value : ',std)
+    print('.................................')
+    print('Standard deviation value + 1 SD : ',MEAN1SD)
+    print('Standard deviation value 1 SD : ',SD1)
+    print('Standard deviation value - 1 SD : ',MEAN_1SD)
+    print('.................................')
+    print('Standard deviation value + 2 SD : ',MEAN2SD)
+    print('Standard deviation value 2 SD : ',SD2)
+    print('Standard deviation value - 2 SD : ',MEAN_2SD)
+    print('*********************************')
+    print('*********************************')
+
+    ##กรุงเทพ
+    SHOWT11 = df.iloc[792:800, 5]
+    show = SHOWT11
+    sum = SHOWT11.sum()
+    print(show)
+    print('.................................')
+    print('Sum value : ',sum)
+    ##ภาคกลาง
+    SHOWT12 = df.iloc[800:816, 5]
+    show = SHOWT12
+    sum = SHOWT12.sum()
+    print(show)
+    print('.................................')
+    print('Sum value : ',sum)
+    ##ภาคเหนือ
+    SHOWT13 = df.iloc[816:832, 5]
+    show = SHOWT13
+    sum = SHOWT13.sum()
+    print(show)
+    print('.................................')
+    print('Sum value : ',sum)
+
+    #ระดับภาค
+
+    SHOWC = df.iloc[848:, 5]
+    show = SHOWC
+    sum = SHOWC.sum()
+    max = SHOWC.max()
+    min = SHOWC.min()
+    mean = SHOWC.mean()
+    std = SHOWC.std()
+    SD1 = (1*std)
+    SD2 = (2*std)
+    MEAN1SD = mean + SD1
+    MEAN_1SD = mean - SD1
+    MEAN2SD = mean + SD2
+    MEAN_2SD = mean - SD2
+    print('district level')
+    print(show)
+    print('.................................')
+    print('Sum value : ',sum)
+    print('Maximun value : ',max)  
+    print('minimum value : ',min)
+    print('Mean value : ',mean)
+    print('Standard deviation value : ',std)
+    print('.................................')
+    print('Standard deviation value + 1 SD : ',MEAN1SD)
+    print('Standard deviation value 1 SD : ',SD1)
+    print('Standard deviation value - 1 SD : ',MEAN_1SD)
+    print('.................................')
+    print('Standard deviation value + 2 SD : ',MEAN2SD)
+    print('Standard deviation value 2 SD : ',SD2)
+    print('Standard deviation value - 2 SD : ',MEAN_2SD)
+    print('*********************************')
+    print('*********************************')
+
+    #ระดับเขต
+    SHOWE = df.iloc[0:, 5]
+    show = SHOWE
+    sum = SHOWE.sum()
+    
+    print(show)
+    print('.................................')
+    print('Sum value : ',sum)
+    print('*********************************')
+    print('*********************************')
+    
+    SHOWT1 = df.iloc[0:72, 5]
+    show = SHOWT1
+    sum = SHOWT1.sum()
+    print(show)
+    print('.................................')
+    print('Sum value T1 : ',sum)
+    print('*********************************')
+    print('*********************************')
+
+    SHOWT2 = df.iloc[72:144, 5]
+    show = SHOWT2
+    sum = SHOWT2.sum()
+    print(show)
+    print('.................................')
+    print('Sum value T2 : ',sum)
+    print('*********************************')
+    print('*********************************')
+
+if __name__ =='__main__':
+    main()
